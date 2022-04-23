@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="form" (submit)="cSalva(form)">
+        <div class="mb-3">
+          <label class="form-label">Data*</label>
+          <input
+            class="form-control"
+            formControlName="data"
+            type="date"
+            id="data"
+            autocomplete="false"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Numero*</label>
+          <input
+            class="form-control"
+            formControlName="numero"
+            type="number"
+            id="numero"
+            autocomplete="false"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Anno*</label>
+          <input
+            class="form-control"
+            formControlName="anno"
+            type="text"
+            id="anno"
+            autocomplete="false"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Importo*</label>
+          <input
+            class="form-control"
+            formControlName="importo"
+            type="text"
+            id="importo"
+            autocomplete="false"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Stato</label>
+          <select
+            class="form-control"
+            formControlName="stato"
+            id="stato"
+            *ngIf="statoFatture && fattura"
+          >
+            <option value=""></option>
+            <option
+              *ngFor="let sf of statoFatture"
+              value="{{ sf.id }}"
+              [attr.selected]="sf.id === fattura.stato.id ? true : null"
+            >
+              {{ sf.nome }}
+            </option>
+          </select>
+          <select
+            class="form-control"
+            formControlName="stato"
+            id="stato2"
+            *ngIf="id == 0"
+          >
+            <option value=""></option>
+            <option *ngFor="let sf of statoFatture" value="{{ sf.id }}">
+              {{ sf.nome }}
+            </option>
+          </select>
+        </div>
+        <div style="margin-top: 20px">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!form.valid"
+          >
+            Salva
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

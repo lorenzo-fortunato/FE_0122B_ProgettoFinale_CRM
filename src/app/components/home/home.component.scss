@@ -1,0 +1,22 @@
+.x {
+  background-image: url("img/geran-de-klerk-qzgN45hseN0-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#img {
+  width: 100vw;
+  height: 100vh;
+}
+
+#titoloPrimo {
+  color: white;
+  font-size: 2.5rem;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  margin: auto;
+  width: 800px;
+  text-align: center;
+  padding-top: 100px;
+}

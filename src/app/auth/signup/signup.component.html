@@ -1,0 +1,55 @@
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="onsubmit(form)">
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input
+        name="name"
+        required
+        ngModel
+        class="form-control"
+        id="name"
+        type="text"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        name="email"
+        class="form-control"
+        required
+        ngModel
+        id="email"
+        type="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <input
+        name="password"
+        class="form-control"
+        required
+        ngModel
+        id="pass"
+        type="password"
+      />
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="form-group d-flex">
+        <label for="ruolo">Ruolo</label>
+        <select name="ruolo" id="ruolo" ngModel>
+          <option value="none"></option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="form.invalid" class="btn accedi mt-4">
+        Registrati
+        <span
+          *ngIf="isLoading"
+          class="spinner-border spinner-border-sm"
+          role="status"
+        ></span>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,1 +1,148 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+////// generici //////
+body {
+  background-color: rgb(165, 162, 162);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+input:focus {
+  box-shadow: 0 0 5px rgb(66, 255, 66);
+}
+
+.accedi {
+  background-color: rgb(66, 255, 66);
+  color: white;
+  width: 25%;
+}
+
+.accedi:hover {
+  background-color: rgb(122, 247, 122);
+}
+
+table {
+  margin: auto;
+}
+
+.tabella {
+  border-radius: 30px;
+  background-color: #222222;
+  box-shadow: 5px 5px 3px rgb(87, 87, 87);
+  color: white;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  margin-top: 60px;
+  padding: 40px;
+  padding-top: 40px;
+  margin-bottom: 90px;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.tabLarghezza {
+  width: 95%;
+}
+
+thead {
+  border-bottom: 2px solid white;
+}
+
+th {
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 4px;
+  padding-right: 110px;
+  padding-top: 10px;
+}
+
+tr:nth-child(even) {
+  background: rgb(56, 56, 56);
+}
+
+ul {
+  margin-top: 30px;
+}
+
+.pagination a {
+  background-color: rgb(165, 162, 162);
+  color: black;
+}
+
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: rgb(66, 255, 66) !important;
+}
+
+.testo {
+  visibility: visible;
+  margin-top: 5px;
+}
+
+.simbolo {
+  visibility: hidden;
+  transform: rotate(45deg);
+  display: inline-block;
+  position: relative;
+  bottom: 35px;
+  font-size: 2.1rem;
+}
+
+.delete:hover > .testo {
+  visibility: hidden;
+}
+
+.delete:hover > .simbolo {
+  visibility: visible;
+}
+
+.btnNuovo:hover > .testo {
+  visibility: hidden;
+}
+
+.btnNuovo:hover > .simbolo {
+  transform: rotate(0deg);
+  visibility: visible;
+}
+
+.modify:hover > .testo {
+  visibility: hidden;
+}
+
+.modify:hover > .simbolo {
+  transform: rotate(-90deg);
+  color: black;
+  font-weight: bold;
+  visibility: visible;
+  right: 3px;
+}
+
+.invoice:hover > .testo {
+  visibility: hidden;
+}
+
+.invoice:hover > .simbolo {
+  transform: rotate(0deg);
+  color: white;
+  font-weight: bold;
+  visibility: visible;
+  right: 1px;
+  bottom: 38px;
+}
+
+////// animazioni //////
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

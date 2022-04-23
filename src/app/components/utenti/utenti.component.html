@@ -1,0 +1,65 @@
+<div class="tabella">
+  <table class="tabLarghezza">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ruolo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td *ngFor="let role of user.roles; let i = index">
+          {{ user.roles[i].roleName }}
+        </td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="8">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination" *ngIf="response">
+              <li class="page-item" *ngIf="!response.first">
+                <a
+                  class="page-link"
+                  (click)="
+                    $event.preventDefault(); CambiaPagina(response.number - 1)
+                  "
+                  href="#"
+                  >Previous</a
+                >
+              </li>
+              <li
+                class="page-item"
+                *ngFor="let p of counter(response.totalPages); index as i"
+                [ngClass]="i == response.number ? 'active' : ''"
+              >
+                <a
+                  class="page-link"
+                  (click)="$event.preventDefault(); CambiaPagina(i)"
+                  href="#"
+                  >{{ i + 1 }}</a
+                >
+              </li>
+              <li class="page-item" *ngIf="!response.last">
+                <a
+                  class="page-link"
+                  (click)="
+                    $event.preventDefault(); CambiaPagina(response.number + 1)
+                  "
+                  href="#"
+                  >Next</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
